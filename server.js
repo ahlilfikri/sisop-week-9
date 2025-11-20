@@ -28,6 +28,12 @@ const userSchema = new mongoose.Schema({
 const User = mongoose.model("User", userSchema);
 
 // GET all users
+app.get("/", async (req, res) => {
+  words = "hai silahkan test api anda...";
+  res.json(words);
+});
+
+// GET all users
 app.get("/users", async (req, res) => {
   const users = await User.find();
   res.json(users);
